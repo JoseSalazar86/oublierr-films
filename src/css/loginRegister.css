@@ -1,0 +1,51 @@
+/* Botón de login/logout y base para registro - MODO CLARO */
+.auth-buttons__btn {
+  padding: 0.5rem 1.2rem;
+  background-color: var(--color-primary-light);
+  color: #fff;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Bloque de botones */
+.auth-buttons {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: flex-end;
+  margin: 1.2rem;
+  min-width: 160px;
+}
+
+/* Hover - MODO CLARO */
+.auth-buttons__btn:hover {
+  background-color: var(--color-accent-light);
+  color: #fff;
+}
+
+/* Botón registro - MODO CLARO */
+.auth-buttons__btn--register {
+  background-color: var(--color-primary-light);
+}
+.auth-buttons__btn--register:hover {
+  background-color: var(--color-accent-light);
+  color: #fff;
+}
+
+.dark .auth-buttons__btn {
+  background-color: var(--color-primary-dark);
+  color: #fff;
+}
+.dark .auth-buttons__btn:hover {
+  background-color: var(--color-accent-dark);
+  color: #fff;
+}
+.dark .auth-buttons__btn--register {
+  background-color: var(--color-primary-dark);
+}
+.dark .auth-buttons__btn--register:hover {
+  background-color: var(--color-accent-dark);
+  color: #fff;
+}

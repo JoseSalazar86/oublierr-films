@@ -1,120 +1,163 @@
-import React from 'react';
-import { useState } from "react";
+import React from "react";
+import { Formik, Form, Field, ErrorMessage } from "formik";
+import * as Yup from "yup";
+import "../css/contacto.css"
 
+// Esquema de validación Yup (añadido mensaje)
+const validationSchema = Yup.object({
+  nombre: Yup.string()
+    .min(3, "El nombre debe tener al menos 3 letras.")
+    .required("El nombre es obligatorio."),
+  email: Yup.string()
+    .email("Correo electrónico inválido.")
+    .required("El correo es obligatorio."),
+  fecha: Yup.string()
+    .required("Debes seleccionar una fecha."),
+  telefono: Yup.string()
+    .matches(/^\d{9}$/, "Introduce un número válido de 9 cifras.")
+    .required("El teléfono es obligatorio."),
+  motivo: Yup.string()
+    .required("Selecciona un motivo."),
+  mensaje: Yup.string()
+    .min(10, "El mensaje debe tener al menos 10 caracteres.")
+    .required("El mensaje es obligatorio."),
+  acepto: Yup.boolean()
+    .oneOf([true], "Debes aceptar los términos.")
+});
 
 function Contacto() {
-  const [formulario, setFormulario] = useState({
-    nombre: "",
-    email: "",
-    fecha: "",
-    telefono: "",
-    motivo: "",
-    acepto: false,
-  });
-
-  const [errores, setErrores] = useState({});
-
-  const handleChange = (e) => {
-    const { name, value, type, checked } = e.target;
-    setFormulario({
-      ...formulario,
-      [name]: type === "checkbox" ? checked : value,
-    });
-    validarCampo(name, type === "checkbox" ? checked : value);
-  };
-
-  const validarCampo = (name, value) => {
-    let error = "";
-
-    if (name === "nombre" && value.trim().length < 3) {
-      error = "El nombre debe tener al menos 3 letras.";
-    }
-
-    if (name === "email" && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
-      error = "Correo electrónico inválido.";
-    }
-
-    if (name === "fecha" && !value) {
-      error = "Debes seleccionar una fecha.";
-    }
-
-    if (name === "telefono" && !/^\d{9}$/.test(value)) {
-      error = "Introduce un número válido de 9 cifras.";
-    }
-
-    if (name === "acepto" && !value) {
-      error = "Debes aceptar los términos.";
-    }
-
-    setErrores((prev) => ({ ...prev, [name]: error }));
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const hayErrores = Object.values(errores).some((e) => e !== "");
-    const camposVacios = Object.entries(formulario).some(
-      ([key, val]) => (key !== "acepto" && val === "") || (key === "acepto" && !val)
-    );
-
-    if (hayErrores || camposVacios) {
-      alert("Por favor, completa todos los campos correctamente.");
-      return;
-    }
-
+  const handleSubmit = (values, { resetForm }) => {
     alert("Formulario enviado correctamente.");
-    // Aquí podrías enviar los datos a una API, si lo deseas
+    // Aquí puedes enviar los datos a una API si lo deseas
+    resetForm();
   };
 
   return (
     <section className="contacto">
-      <h2>Contacto</h2>
-      <form onSubmit={handleSubmit} noValidate>
-        <div>
-          <label>Nombre:</label>
-          <input type="text" name="nombre" value={formulario.nombre} onChange={handleChange} />
-          {errores.nombre && <span className="error">{errores.nombre}</span>}
-        </div>
+      <h2 className="contacto__titulo">Contacto</h2>
+      <Formik
+        initialValues={{
+          nombre: "",
+          email: "",
+          fecha: "",
+          telefono: "",
+          motivo: "",
+          mensaje: "",
+          acepto: false,
+        }}
+        validationSchema={validationSchema}
+        onSubmit={handleSubmit}
+        validateOnBlur
+        validateOnChange
+      >
+        {({ isSubmitting }) => (
+          <Form className="contacto__form">
+            {/* Nombre */}
+            <div className="contacto__campo">
+              <label className="contacto__label" htmlFor="nombre">Nombre:</label>
+              <Field
+                className="contacto__input"
+                type="text"
+                name="nombre"
+                id="nombre"
+              />
+              <ErrorMessage name="nombre" component="span" className="contacto__error" />
+            </div>
 
-        <div>
-          <label>Email:</label>
-          <input type="email" name="email" value={formulario.email} onChange={handleChange} />
-          {errores.email && <span className="error">{errores.email}</span>}
-        </div>
+            {/* Email */}
+            <div className="contacto__campo">
+              <label className="contacto__label" htmlFor="email">Email:</label>
+              <Field
+                className="contacto__input"
+                type="email"
+                name="email"
+                id="email"
+              />
+              <ErrorMessage name="email" component="span" className="contacto__error" />
+            </div>
 
-        <div>
-          <label>Fecha de contacto:</label>
-          <input type="date" name="fecha" value={formulario.fecha} onChange={handleChange} />
-          {errores.fecha && <span className="error">{errores.fecha}</span>}
-        </div>
+            {/* Fecha */}
+            <div className="contacto__campo">
+              <label className="contacto__label" htmlFor="fecha">Fecha de contacto:</label>
+              <Field
+                className="contacto__input"
+                type="date"
+                name="fecha"
+                id="fecha"
+              />
+              <ErrorMessage name="fecha" component="span" className="contacto__error" />
+            </div>
 
-        <div>
-          <label>Teléfono:</label>
-          <input type="tel" name="telefono" value={formulario.telefono} onChange={handleChange} />
-          {errores.telefono && <span className="error">{errores.telefono}</span>}
-        </div>
+            {/* Teléfono */}
+            <div className="contacto__campo">
+              <label className="contacto__label" htmlFor="telefono">Teléfono:</label>
+              <Field
+                className="contacto__input"
+                type="tel"
+                name="telefono"
+                id="telefono"
+              />
+              <ErrorMessage name="telefono" component="span" className="contacto__error" />
+            </div>
 
-        <div>
-          <label>Motivo de contacto:</label>
-          <select name="motivo" value={formulario.motivo} onChange={handleChange}>
-            <option value="">-- Selecciona --</option>
-            <option value="problema">Tengo un problema</option>
-            <option value="sugerencia">Quiero sugerir algo</option>
-            <option value="otro">Otro</option>
-          </select>
-        </div>
+            {/* Motivo */}
+            <div className="contacto__campo">
+              <label className="contacto__label" htmlFor="motivo">Motivo de contacto:</label>
+              <Field
+                as="select"
+                className="contacto__select"
+                name="motivo"
+                id="motivo"
+              >
+                <option value="">-- Selecciona --</option>
+                <option value="problema">Tengo un problema</option>
+                <option value="sugerencia">Quiero sugerir algo</option>
+                <option value="otro">Otro</option>
+              </Field>
+              <ErrorMessage name="motivo" component="span" className="contacto__error" />
+            </div>
 
-        <div>
-          <label>
-            <input type="checkbox" name="acepto" checked={formulario.acepto} onChange={handleChange} />
-            Acepto los términos y condiciones
-          </label>
-          {errores.acepto && <span className="error">{errores.acepto}</span>}
-        </div>
+            {/* Mensaje (textarea) */}
+            <div className="contacto__campo">
+              <label className="contacto__label" htmlFor="mensaje">Mensaje:</label>
+              <Field
+                as="textarea"
+                className="contacto__textarea"
+                name="mensaje"
+                id="mensaje"
+                rows={4}
+                placeholder="Escribe tu mensaje aquí..."
+              />
+              <ErrorMessage name="mensaje" component="span" className="contacto__error" />
+            </div>
 
-        <button type="submit">Enviar</button>
-      </form>
+            {/* Aceptar términos */}
+            <div className="contacto__campo contacto__campo--checkbox">
+              <label className="contacto__label">
+                <Field
+                  type="checkbox"
+                  name="acepto"
+                  className="contacto__checkbox"
+                />
+                Acepto los términos y condiciones
+              </label>
+              <ErrorMessage name="acepto" component="span" className="contacto__error" />
+            </div>
+
+            {/* Botón */}
+            <button
+              className="contacto__btn"
+              type="submit"
+              disabled={isSubmitting}
+            >
+              {isSubmitting ? "Enviando..." : "Enviar"}
+            </button>
+          </Form>
+        )}
+      </Formik>
     </section>
   );
 }
 
 export default Contacto;
+

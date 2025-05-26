@@ -1,0 +1,91 @@
+/* Login y formularios generales (BEM) */
+
+.login {
+  max-width: 400px;
+  margin: 2.5rem auto;
+  padding: 2rem 2.5rem;
+  background: var(--color-secondary-bg, #f4f4f4);
+  border-radius: 1rem;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+
+.login__titulo {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: var(--color-text, #1e1e1e);
+  font-size: 1.6rem;
+}
+
+.login__formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.login__campo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.login__label {
+  font-weight: 600;
+  color: var(--color-text, #1e1e1e);
+}
+
+.login__input,
+.login__input[type="email"],
+.login__input[type="password"] {
+  padding: 0.65rem 0.9rem;
+  border: 1.5px solid var(--color-border, #ccc);
+  border-radius: 0.35rem;
+  background: var(--color-bg, #fff);
+  color: var(--color-text, #1e1e1e);
+  font-size: 1rem;
+  transition: border-color 0.2s;
+}
+
+.login__input:focus {
+  border-color: var(--color-primary, #2563eb);
+}
+
+.login__error {
+  color: #e53935;
+  font-size: 0.95rem;
+  margin-top: 0.1rem;
+}
+
+.login__register-link {
+  text-align: center;
+  font-size: 1rem;
+  margin: 0.6rem 0 0.2rem 0;
+}
+
+.login__enlace {
+  color: var(--color-primary, #2563eb);
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+.login__enlace:hover {
+  color: var(--color-accent, #4a90e2);
+}
+
+.login__btn {
+  margin-top: 0.5rem;
+  padding: 0.7rem 1.5rem;
+  border-radius: 0.4rem;
+  background: var(--color-primary, #2563eb);
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.1rem;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.login__btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.login__btn:hover:not(:disabled) {
+  background: var(--color-accent, #4a90e2);
+}

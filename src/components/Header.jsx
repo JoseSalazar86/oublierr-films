@@ -2,43 +2,50 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import DarkModeToggle from "./DarkModeToggle";
-import "../css/index.css"
+import "../css/header.css"
 
+/**
+ * Header principal de la app.
+ * Incluye logo, título, menú de navegación y el toggle de modo oscuro.
+ */
 function Header() {
   const { user } = useAuth();
 
   return (
     <header className="header">
-      <div className="header-left">
+      {/* Logo y título */}
+      <div className="header__left">
         <img
-          src=""
+          src="../public/logo-oublier_films.png"
           alt="Oublier Films"
-          className="logo"
+          className="header__logo"
         />
-        <h1>Oublier Films</h1>
+        <h1 className="header__titulo">Oublier Films</h1>
       </div>
 
-      <nav className="nav">
-        <ul className="nav-list">
+      {/* Menú de navegación */}
+      <nav className="header__nav">
+        <ul className="header__nav-list">
           {/* Enlace Inicio adaptativo */}
-          <li><Link to={user ? "/dashboard" : "/"}>Inicio</Link></li>
-          <li><Link to="/peliculas">Peliculas</Link></li>
-          <li><Link to="/contacto">Contacto</Link></li>
-
+          <li><Link className="header__nav-link" to={user ? "/dashboard" : "/"}>Inicio</Link></li>
+          <li><Link className="header__nav-link" to="/peliculas">Peliculas</Link></li>
+          <li><Link className="header__nav-link" to="/contacto">Contacto</Link></li>
           {user && (
             <>
-              <li><Link to="/dashboard/favoritos">Favoritos</Link></li>
-              <li><Link to="/dashboard/perfil">Perfil</Link></li>
+              <li><Link className="header__nav-link" to="/dashboard/favoritos">Favoritos</Link></li>
+              <li><Link className="header__nav-link" to="/dashboard/perfil">Perfil</Link></li>
             </>
           )}
         </ul>
       </nav>
 
+      {/* Botón para alternar modo oscuro */}
       <DarkModeToggle />
     </header>
   );
 }
 
 export default Header;
+
 
 

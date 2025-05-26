@@ -1,0 +1,64 @@
+/* HEADER - Modo claro por defecto */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--color-bg-light);
+  color: var(--color-text-light);
+  border-bottom: 1px solid var(--color-border-light);
+  flex-wrap: wrap;
+}
+
+.header__left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header__logo {
+  width: 4rem;
+  height: auto;
+}
+
+.header__titulo {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.header__nav {
+  flex-grow: 1;
+  text-align: center;
+}
+
+.header__nav-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+.header__nav-link {
+  text-decoration: none;
+  color: inherit;
+  padding: 0.5rem;
+  transition: color 0.3s;
+}
+
+.header__nav-link:hover {
+  color: var(--color-primary-light);
+}
+
+/* HEADER - Modo oscuro (sobreescribe solo lo necesario) */
+.dark .header {
+  background-color: var(--color-bg-dark);
+  color: var(--color-text-dark);
+  border-bottom: 1px solid var(--color-border-dark);
+}
+
+.dark .header__nav-link:hover {
+  color: var(--color-primary-dark);
+}

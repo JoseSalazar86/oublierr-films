@@ -1,0 +1,53 @@
+/* Card base - MODO CLARO */
+.card-pelicula {
+  cursor: pointer;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background-color: var(--color-secondary-bg-light);
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Hover - ambas */
+.card-pelicula:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Imagen de la card */
+.card-pelicula__img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+}
+
+/* Info extra de la card */
+.card-pelicula__info {
+  padding: 0.5rem;
+}
+
+/* Título de la película - MODO CLARO */
+.card-pelicula__titulo {
+  margin: 0.5rem 0 0 0;
+  font-size: 0.87rem;
+  color: var(--color-text-light);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-height: 1.7em;
+  max-height: 1.85em;
+  word-break: break-word;
+}
+
+.dark .card-pelicula {
+  background-color: var(--color-secondary-bg-dark);
+}
+
+.dark .card-pelicula__titulo {
+  color: var(--color-text-dark);
+}

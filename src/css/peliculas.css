@@ -1,0 +1,182 @@
+/* Peliculas (BEM) */
+
+.peliculas {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.peliculas__titulo-seccion {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: #222;
+  font-family: 'Insland Momenta', 'Inter', sans-serif;
+}
+
+.peliculas__filtros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 2em;
+}
+
+.peliculas__input,
+.peliculas__select {
+  padding: 0.5em;
+  border-radius: 8px;
+  border: 1px solid #b0bbea;
+  font-size: 1em;
+  min-width: 120px;
+  background: #fcfcfc;
+}
+
+.peliculas__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2em;
+}
+
+.peliculas__card-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 340px; /* O el alto que necesites para que todas sean iguales */
+  justify-content: flex-end;
+}
+
+/* Tarjeta película */
+.peliculas__card {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 2px 12px #e6e9f8;
+  padding: 1em 0.7em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  flex-grow: 1;
+}
+
+.peliculas__img {
+  border-radius: 12px;
+  width: 100%;
+  height: 220px;     /* Fija la altura para que todas las imágenes tengan el mismo tamaño */
+  object-fit: cover;
+  margin-bottom: 0.6em;
+}
+
+.peliculas__nombre {
+  font-family: 'Inter', sans-serif;
+  font-weight: bold;
+  font-size: 0.8em;
+  margin-bottom: 0.6em;
+  text-align: center;
+  min-height: 2.5em;
+}
+
+.peliculas__fav-btn {
+  border: none;
+  background: #2563eb;
+  color: #fff;
+  padding: 0.45em 1em;
+  border-radius: 7px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+  transition: background 0.18s;
+  box-shadow: 0 2px 10px #2563eb22;
+  width: 100%;
+  max-width: 130px;
+}
+
+.peliculas__fav-btn:hover {
+  background: #1741a1;
+}
+
+.peliculas__mensaje-login {
+  text-align: center;
+  margin: 2em 0;
+  color: #888;
+}
+
+.peliculas__no-resultados {
+  text-align: center;
+  color: #888;
+  margin: 2em 0;
+}
+
+
+.peliculas__mensaje-fav {
+  text-align: center;
+  color: var(--color-primary, #2563eb);
+  background: #f0f4fa;
+  padding: 0.65em 1em;
+  border-radius: 8px;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  font-weight: 600;
+  transition: opacity 0.2s;
+}
+.dark .peliculas__mensaje-fav {
+  background: #23262f;
+  color: var(--color-accent-dark, #666);
+}
+
+
+/* Modo OSCURO para Peliculas (añadir debajo del CSS anterior o en tu archivo de modo oscuro) */
+
+.dark .peliculas__titulo-seccion {
+  color: var(--color-text-dark);
+}
+
+.dark .peliculas__filtros {
+  /* Puedes poner fondo/transición si quieres */
+}
+
+.dark .peliculas__input,
+.dark .peliculas__select {
+  background: var(--color-secondary-bg-dark, #23262f);
+  border-color: var(--color-border-dark, #333);
+  color: var(--color-text-dark);
+}
+
+.dark .peliculas__input:focus,
+.dark .peliculas__select:focus {
+  border-color: var(--color-primary-dark, #444);
+}
+
+.dark .peliculas__grid {
+  /* No suele hacer falta, salvo fondo especial */
+}
+
+.dark .peliculas__card {
+  background: var(--color-secondary-bg-dark, #23262f);
+  color: var(--color-text-dark);
+  box-shadow: 0 2px 12px #1118;
+}
+
+.dark .peliculas__img {
+  /* Si quieres, puedes dar un borde o filtro para que destaquen en oscuro */
+  background: var(--color-border-dark, #222);
+}
+
+.dark .peliculas__nombre {
+  color: var(--color-text-dark);
+}
+
+.dark .peliculas__fav-btn {
+  background: var(--color-primary-dark, #444);
+  color: #fff;
+}
+
+.dark .peliculas__fav-btn:hover {
+  background: var(--color-accent-dark, #666);
+}
+
+.dark .peliculas__mensaje-login,
+.dark .peliculas__no-resultados {
+  color: #bbb;
+}

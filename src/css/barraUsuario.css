@@ -1,0 +1,26 @@
+/* Barra usuario*/
+.usuario-barra {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.usuario-barra__info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2em;
+  padding-left:2rem ;
+}
+
+.usuario-barra__nombre {
+  font-size: 1.1rem;
+  font-weight: bold;
+
+}
+
+.usuario-barra__perfil {
+  color: var(--color-primary);
+  font-size: 1rem;
+  text-decoration: underline;
+
+}

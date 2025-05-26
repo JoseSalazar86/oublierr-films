@@ -1,0 +1,56 @@
+.explorar-generos {
+  margin: 2rem 0;
+}
+
+/* Título */
+.explorar-generos__titulo {
+  font-size: 1.5rem;
+  color: var(--color-text-light);
+  margin-bottom: 0.75rem;
+  text-align: left;
+}
+
+/* Contenedor de enlaces */
+.explorar-generos__nav {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+/* Enlace individual - MODO CLARO */
+.explorar-generos__enlace {
+  padding: 0.5rem 1.3rem;
+  border-radius: 25px;
+  border: 1.5px solid var(--color-border-light);
+  text-decoration: none;
+  color: var(--color-text-light);
+  background-color: var(--color-secondary-bg-light);
+  font-weight: 600;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+  white-space: nowrap;
+}
+
+/* Hover - MODO CLARO */
+.explorar-generos__enlace:hover,
+.explorar-generos__enlace:focus {
+  background-color: var(--color-primary-light);
+  color: #fff;
+  border-color: var(--color-primary-light);
+}
+
+.dark .explorar-generos__titulo {
+  color: var(--color-text-dark);
+}
+
+.dark .explorar-generos__enlace {
+  border: 1.5px solid var(--color-border-dark);
+  color: var(--color-text-dark);
+  background-color: var(--color-secondary-bg-dark);
+}
+.dark .explorar-generos__enlace:hover,
+.dark .explorar-generos__enlace:focus {
+  background-color: var(--color-primary-dark);
+  color: #fff;
+  border-color: var(--color-primary-dark);
+}

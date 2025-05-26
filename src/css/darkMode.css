@@ -1,0 +1,56 @@
+/* Bloque principal del toggle */
+.toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1rem auto;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Barra deslizante (fondo) - MODO CLARO */
+.toggle__slider {
+  width: 60px;
+  height: 30px;
+  border-radius: 30px;
+  background-color: var(--color-border-light);
+  position: relative;
+  transition: background-color 0.3s;
+}
+/* Barra deslizante - MODO OSCURO */
+.dark .toggle__slider,
+.toggle--dark .toggle__slider {
+  background-color: var(--color-primary-dark);
+}
+
+/* Círculo deslizante - MODO CLARO */
+.toggle__circle {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background-color: var(--color-bg-light);
+  color: var(--color-text-light);
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  transition: transform 0.3s ease-in-out, background 0.3s, color 0.3s;
+}
+/* Círculo deslizante - MODO OSCURO */
+.dark .toggle__circle,
+.toggle--dark .toggle__circle {
+  transform: translateX(30px);
+  background-color: var(--color-accent-dark);
+  color: var(--color-text-dark);
+}
+
+/* Etiqueta de texto del toggle */
+.toggle__label {
+  font-weight: bold;
+  font-size: 0.9rem;
+  color: inherit;
+}

@@ -1,0 +1,140 @@
+/* Bloque principal */
+.contacto {
+  max-width: 420px;
+  margin: 2.5rem auto;
+  padding: 2.2rem 2.5rem;
+  background: var(--color-secondary-bg, #f4f4f4);
+  border-radius: 1rem;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+
+.contacto__titulo {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: var(--color-text, #1e1e1e);
+  font-size: 1.6rem;
+  font-family: 'Insland Momenta', 'Inter', sans-serif;
+}
+
+.contacto__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* Campo individual */
+.contacto__campo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.contacto__campo--checkbox {
+  flex-direction: row;
+  align-items: center;
+  gap: 0.7em;
+}
+
+.contacto__label {
+  font-weight: 600;
+  color: var(--color-text, #1e1e1e);
+  margin-bottom: 0.08em;
+}
+
+.contacto__input,
+.contacto__select,
+.contacto__textarea {
+  padding: 0.65rem 0.9rem;
+  border: 1.5px solid var(--color-border, #ccc);
+  border-radius: 0.35rem;
+  background: var(--color-bg, #fff);
+  color: var(--color-text, #1e1e1e);
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.contacto__input:focus,
+.contacto__select:focus,
+.contacto__textarea:focus {
+  border-color: var(--color-primary, #2563eb);
+  background: var(--color-secondary-bg, #f4f4f4);
+}
+
+.contacto__textarea {
+  resize: vertical;
+  min-height: 90px;
+  max-height: 230px;
+}
+
+.contacto__checkbox {
+  accent-color: var(--color-primary, #2563eb);
+  margin-right: 0.6em;
+}
+
+.contacto__error {
+  color: #e53935;
+  font-size: 0.97rem;
+  margin-top: 0.11em;
+}
+
+.contacto__btn {
+  background-color: var(--color-primary, #2563eb);
+  color: #fff;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 0.35rem;
+  font-weight: 700;
+  font-size: 1.09rem;
+  cursor: pointer;
+  margin-top: 0.8rem;
+  transition: background 0.2s, color 0.2s;
+}
+
+.contacto__btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.contacto__btn:hover:enabled {
+  background: var(--color-accent, #4a90e2);
+}
+
+/* ----------- DARK MODE ------------ */
+.dark .contacto {
+  background: var(--color-secondary-bg-dark, #23262f);
+  color: var(--color-text-dark, #fcfcfc);
+  box-shadow: 0 4px 24px rgba(16,32,80,0.08);
+}
+
+.dark .contacto__titulo {
+  color: var(--color-text-dark, #fcfcfc);
+}
+
+.dark .contacto__input,
+.dark .contacto__select,
+.dark .contacto__textarea {
+  background: var(--color-bg-dark, #1e1e1e);
+  color: var(--color-text-dark, #fcfcfc);
+  border-color: var(--color-border-dark, #444);
+}
+
+.dark .contacto__input:focus,
+.dark .contacto__select:focus,
+.dark .contacto__textarea:focus {
+  border-color: var(--color-primary-dark, #444);
+  background: var(--color-secondary-bg-dark, #23262f);
+}
+
+.dark .contacto__label {
+  color: var(--color-text-dark, #fcfcfc);
+}
+
+.dark .contacto__btn {
+  background: var(--color-primary-dark, #444);
+  color: #fff;
+}
+
+.dark .contacto__btn:hover:enabled {
+  background: var(--color-accent-dark, #666);
+}

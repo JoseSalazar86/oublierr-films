@@ -1,0 +1,169 @@
+
+.favoritos {
+
+  margin: 2.5rem auto;
+  padding: 2.2rem 2.5rem;
+  background: var(--color-secondary-bg, #f4f4f4);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+
+.favoritos__titulo {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: var(--color-text, #1e1e1e);
+  font-size: 1.55rem;
+  font-family: 'Insland Momenta', 'Inter', sans-serif;
+  font-weight: bold;
+  letter-spacing: 0.01em;
+}
+
+.favoritos__vacio {
+  color: #888;
+  text-align: center;
+  font-size: 1.08em;
+  margin-top: 2em;
+}
+
+.favoritos__lista {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1em;
+}
+
+.favoritos__item {
+  background: transparent;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.favoritos__link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  flex: 1;
+}
+
+.favoritos__card {
+  display: flex;
+  align-items: center;
+  gap: 1.15em;
+  background: #fff;
+  border-radius: 1.05em;
+  box-shadow: 0 4px 18px #e6e9f85c;
+  border: 1.5px solid #e6e9f8;
+  transition: transform 0.18s, box-shadow 0.22s, border-color 0.2s;
+  padding: 0.7em 1.5em 0.7em 0.7em;
+  min-height: 105px;
+}
+
+.favoritos__card:hover {
+  transform: translateY(-2px) scale(1.012);
+  box-shadow: 0 8px 32px #b0bbea44;
+  border-color: var(--color-primary, #2563eb);
+  background: #fcfcfc;
+}
+
+.favoritos__poster {
+  width: 64px;
+  height: 95px;
+  object-fit: cover;
+  border-radius: 8px;
+  background: #e6e9f8;
+  box-shadow: 0 1px 6px #0001;
+  flex-shrink: 0;
+}
+
+.favoritos__info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.22em;
+  justify-content: center;
+}
+
+.favoritos__nombre {
+  font-size: 1.09em;
+  font-weight: 700;
+  color: var(--color-text, #1e1e1e);
+  letter-spacing: 0.01em;
+  line-height: 1.2;
+  max-width: 260px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.favoritos__tipo {
+  display: inline-block;
+  background: var(--color-primary, #2563eb);
+  color: #fff;
+  font-size: 0.93em;
+  font-weight: 600;
+  border-radius: 999px;
+  padding: 0.16em 0.92em;
+  margin-top: 0.29em;
+  letter-spacing: 0.02em;
+}
+
+/* Botón eliminar (cruz) */
+.favoritos__eliminar {
+  background: #e53935;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  margin-left: 1.2em;
+  font-size: 1.4em;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.18s, transform 0.18s;
+  box-shadow: 0 2px 8px #e5393525;
+  cursor: pointer;
+  outline: none;
+  z-index: 2;
+}
+.favoritos__eliminar:hover {
+  background: #b71c1c;
+  transform: scale(1.1);
+}
+
+/* DARK MODE */
+.dark .favoritos {
+  background: var(--color-secondary-bg-dark, #23262f);
+  color: var(--color-text-dark, #fcfcfc);
+  box-shadow: 0 4px 20px rgba(16,32,80,0.10);
+}
+
+.dark .favoritos__titulo {
+  color: var(--color-text-dark, #fcfcfc);
+}
+.dark .favoritos__card {
+  background: var(--color-bg-dark, #1e1e1e);
+  border-color: var(--color-border-dark, #444);
+  box-shadow: 0 2px 10px #2229;
+}
+.dark .favoritos__card:hover {
+  background: var(--color-secondary-bg-dark, #23262f);
+  border-color: var(--color-accent-dark, #666);
+}
+.dark .favoritos__nombre {
+  color: var(--color-text-dark, #fcfcfc);
+}
+.dark .favoritos__tipo {
+  background: var(--color-accent-dark, #666);
+  color: #fff;
+}
+.dark .favoritos__eliminar {
+  background: #f55;
+  color: #fff;
+}
+.dark .favoritos__eliminar:hover {
+  background: #c11;
+}

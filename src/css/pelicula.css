@@ -1,0 +1,175 @@
+.pelicula-detalle {
+
+  width: 100vw;           
+  min-height: 100vh;     
+  margin: 0;
+  background: var(--color-bg, #fff);
+  border-radius: 0;       
+  box-shadow: none;      
+  padding: 2rem 0;
+}
+.pelicula-detalle {
+  width: 100vw;
+  min-height: 100vh;
+  background: var(--color-bg, #fff);
+}
+
+.pelicula-detalle__contenido {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 2rem 2.5rem 2rem;
+
+}
+
+
+/* Grid principal: poster + info */
+.pelicula-detalle__grid {
+  display: flex;
+  gap: 2.5rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+}
+.pelicula-detalle__media {
+  flex-shrink: 0;
+}
+.pelicula-detalle__poster {
+  border-radius: 14px;
+  box-shadow: 0 4px 16px #b0bbea33;
+  width: 220px;
+  height: 325px;
+  object-fit: cover;
+  background: #e6e9f8;
+}
+.pelicula-detalle__info {
+  flex: 1;
+}
+.pelicula-detalle__titulo {
+  font-size: 2rem;
+  margin-bottom: 0.3em;
+}
+.pelicula-detalle__anio,
+.pelicula-detalle__puntuacion {
+  font-size: 1.02em;
+  margin-bottom: 0.4em;
+  color: #444;
+}
+.pelicula-detalle__desc-titulo {
+  margin: 1.1em 0 0.5em 0;
+  font-size: 1.1rem;
+  color: var(--color-primary, #2563eb);
+}
+.pelicula-detalle__descripcion {
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 1.1em;
+}
+
+/* Reparto horizontal */
+.pelicula-detalle__reparto {
+  margin: 2.2rem 0 2.2rem 0;
+}
+.pelicula-detalle__reparto-titulo {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-primary, #2563eb);
+  margin-bottom: 1rem;
+}
+.pelicula-detalle__reparto-lista {
+  display: flex;
+  gap: 1.3rem;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+}
+.pelicula-detalle__reparto-card {
+  background: var(--color-secondary-bg, #f4f4f4);
+  border-radius: 13px;
+  box-shadow: 0 2px 8px #0001;
+  padding: 0.65rem 0.7rem;
+  min-width: 120px;
+  max-width: 120px;
+  text-align: center;
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.pelicula-detalle__reparto-foto {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 0.5em;
+  background: #ddd;
+}
+.pelicula-detalle__reparto-nombre {
+  font-weight: 700;
+  font-size: 0.96em;
+  color: var(--color-text, #222);
+  margin-bottom: 0.17em;
+}
+.pelicula-detalle__reparto-personaje {
+  font-size: 0.87em;
+  color: #888;
+}
+
+/* Trailer */
+.pelicula-detalle__trailer {
+  margin: 2.2rem 0;
+  text-align: center;
+}
+.pelicula-detalle__trailer-titulo {
+  font-size: 1.13rem;
+  font-weight: 700;
+  margin-bottom: 1.1rem;
+}
+.pelicula-detalle__trailer-video {
+  display: flex;
+  justify-content: center;
+}
+
+/* Botones */
+.pelicula-detalle__botones {
+  display: flex;
+  justify-content: center;
+  gap: 1.6em;
+  margin-top: 2.6em;
+}
+.pelicula-detalle__fav,
+.pelicula-detalle__volver {
+  border: none;
+  background: var(--color-primary, #2563eb);
+  color: #fff;
+  padding: 0.5em 1.2em;
+  border-radius: 7px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1.02em;
+  transition: background 0.18s;
+  box-shadow: 0 2px 10px #2563eb22;
+}
+.pelicula-detalle__volver {
+  background: var(--color-border, #e6e9f8);
+  color: var(--color-primary, #2563eb);
+  border: 1.3px solid var(--color-primary, #2563eb);
+}
+.pelicula-detalle__volver:hover {
+  background: var(--color-primary, #2563eb);
+  color: #fff;
+}
+
+/* DARK MODE */
+.dark .pelicula-detalle {
+  background: var(--color-bg-dark, #1e1e1e);
+}
+.dark .pelicula-detalle__reparto-card {
+  background: var(--color-secondary-bg-dark, #23262f);
+  color: var(--color-text-dark, #fcfcfc);
+}
+.dark .pelicula-detalle__reparto-nombre {
+  color: var(--color-text-dark, #fcfcfc);
+}
+.dark .pelicula-detalle__volver {
+  background: var(--color-bg-dark, #1e1e1e);
+  color: var(--color-primary-dark, #444);
+  border: 1.3px solid var(--color-primary-dark, #444);
+}

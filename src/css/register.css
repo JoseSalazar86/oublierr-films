@@ -1,0 +1,70 @@
+/* Register Formulario BEM */
+
+.register {
+  max-width: 400px;
+  margin: 2.5rem auto;
+  padding: 2rem 2.5rem;
+  background: var(--color-secondary-bg, #f4f4f4);
+  border-radius: 1rem;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+
+.register__titulo {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: var(--color-text, #1e1e1e);
+  font-size: 1.6rem;
+}
+
+.register__formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.register__campo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.register__label {
+  font-weight: 600;
+  color: var(--color-text, #1e1e1e);
+}
+
+.register__input {
+  padding: 0.65rem 0.9rem;
+  border: 1.5px solid var(--color-border, #ccc);
+  border-radius: 0.35rem;
+  background: var(--color-bg, #fff);
+  color: var(--color-text, #1e1e1e);
+  font-size: 1rem;
+  transition: border-color 0.2s;
+}
+
+.register__input:focus {
+  border-color: var(--color-primary, #2563eb);
+}
+
+.register__error {
+  color: #e53935;
+  font-size: 0.95rem;
+  margin-top: 0.1rem;
+}
+
+.register__btn {
+  background-color: var(--color-primary, #2563eb);
+  color: #fff;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 0.35rem;
+  font-weight: 700;
+  font-size: 1.08rem;
+  cursor: pointer;
+  margin-top: 0.8rem;
+  transition: background 0.2s;
+}
+.register__btn:hover {
+  background: var(--color-accent, #4a90e2);
+}

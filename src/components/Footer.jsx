@@ -1,27 +1,36 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../css/index.css";
+import "../css/footer.css"
 
+/**
+ * Footer del sitio web Oublier Films
+ * Incluye enlaces a redes sociales, páginas legales y el aviso de copyright.
+ * Usa clases BEM para todos los bloques y elementos.
+ */
 const Footer = () => {
     return (
         <footer className="footer">
-            <div className="footer-redes">
-                <a href="https://twitter.com/oublierrfilms" target="_blank" rel="noopener noreferrer">Twitter</a>
-                <a href="https://instagram.com/oublierrfilms" target="_blank" rel="noopener noreferrer">Instagram</a>
-                <a href="https://facebook.com/oublierrfilms" target="_blank" rel="noopener noreferrer">Facebook</a>
+            {/* Bloque de redes sociales */}
+            <div className="footer__redes">
+                <a className="footer__redes-enlace" href="#" target="_blank" rel="">Twitter</a>
+                <a className="footer__redes-enlace" href="#" target="_blank" rel="">Instagram</a>
+                <a className="footer__redes-enlace" href="#" target="_blank" rel="">Facebook</a>
             </div>
 
-            <div className="footer-enlaces">
-                <Link to="/privacidad">Política de privacidad</Link>
-                <Link to="/cookies">Política de cookies</Link>
-                <Link to="/legal">Aviso legal</Link>
+            {/* Bloque de enlaces legales */}
+            <div className="footer__enlaces">
+                <Link className="footer__enlaces-link" to="/privacidad">Política de privacidad</Link>
+                <Link className="footer__enlaces-link" to="/cookies">Política de cookies</Link>
+                <Link className="footer__enlaces-link" to="/legal">Aviso legal</Link>
             </div>
 
-            <div className="footer-copy">
-            <p>&copy; 2025 Oublier Films. Todos los derechos reservados.</p>
-        </div>
+            {/* Aviso de copyright */}
+            <div className="footer__copy">
+                <p>&copy; 2025 Oublier Films. Todos los derechos reservados.</p>
+            </div>
         </footer>
-    )
+    );
 }
 
 export default Footer;
+

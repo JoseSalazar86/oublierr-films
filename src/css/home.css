@@ -1,0 +1,114 @@
+/* HOME */
+
+.home {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* Hero principal */
+.home__hero {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.home__hero-titulo {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.home__hero-btn {
+  background-color: #1e1e1e;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.home__hero-btn:hover {
+  background-color: #444;
+}
+
+/* Secciones tipo "Populares hoy", "Estrenos" */
+.home__seccion {
+  margin-bottom: 3rem;
+}
+
+.home__seccion-titulo {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  color: #222;
+}
+
+/* Grid de películas */
+.home__grid-peliculas {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Columnas principal (Explorar + Cards especiales) */
+.home__columns {
+  display: flex;
+  gap: 2.5rem;
+  margin-top: 2rem;
+  justify-content: space-between;
+}
+
+.home__col {
+  flex: 1;
+  min-width: 250px;
+}
+
+
+.home__col--right {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  justify-content: flex-end;
+  flex: 1;
+
+}
+
+/* Llamada a registro (lado izquierdo) */
+.home__registro-llamada {
+  margin-top: 2.5rem;
+  background: #f4f4f4;
+  border-radius: 8px;
+  padding: 1.1rem;
+  text-align: center;
+}
+.home__registro-texto {
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+}
+
+/* Cards especiales (tendencia, mejor valorada, próximamente) */
+.home__tendencia,
+.home__mejor-valorada,
+.home__proximamente {
+  margin-bottom: 1rem;
+  text-align: center;
+  /* SIN fondo ni padding, solo si quieres sombra al hover puedes poner box-shadow en la card */
+}
+
+.home__box-titulo {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+/* RESPONSIVE (puedes ajustar esto según necesidad) */
+@media (max-width: 900px) {
+  .home__columns {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .home__col--right {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}

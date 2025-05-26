@@ -3,14 +3,14 @@ import { useNavigate } from "react-router-dom";
 import GenerosExplorar from "../components/ExplorarGeneros";
 import CardPelicula from "../components/CardPelicula";
 import useApi from "../hooks/useApi";
-import { useAuth } from "../context/AuthContext"; 
+import { useAuth } from "../context/AuthContext";
 import { Link } from "react-router-dom";
-
 import "../css/index.css";
+import "../css/dashboard.css";
 
 const Dashboard = () => {
   const navigate = useNavigate();
-  const { user } = useAuth(); // Asegúrate de tener este hook/contexto, ajústalo según tu lógica
+  const { user } = useAuth();
   const { data: populares } = useApi("/movie/popular");
   const { data: estrenos } = useApi("/movie/now_playing");
   const { data: mejorValorada } = useApi("/movie/top_rated");
@@ -18,62 +18,61 @@ const Dashboard = () => {
 
   return (
     <section className="dashboard">
-
-     
-
-
-      <div className="hero">
-        <h1>Descubre las películas más populares</h1>
-        <button onClick={() => navigate("/peliculas")}>Explorar ahora</button>
+      {/* HERO */}
+      <div className="dashboard__hero">
+        <h1 className="dashboard__hero-title">Descubre las películas más populares</h1>
+        <button className="dashboard__hero-btn" onClick={() => navigate("/peliculas")}>Explorar ahora</button>
       </div>
 
-      <div className="seccion">
-        <h2>Populares hoy</h2>
-        <div className="grid-peliculas">
+      {/* Sección: Populares hoy */}
+      <div className="dashboard__section">
+        <h2 className="dashboard__section-title">Populares hoy</h2>
+        <div className="dashboard__grid-peliculas">
           {populares &&
-            populares.slice(0, 10).map((peli) => (
+            populares.slice(0, 12).map((peli) => (
               <CardPelicula key={peli.id} pelicula={peli} />
             ))}
         </div>
       </div>
 
-      <div className="seccion">
-        <h2>Estrenos recientes</h2>
-        <div className="grid-peliculas">
+      {/* Sección: Estrenos recientes */}
+      <div className="dashboard__section">
+        <h2 className="dashboard__section-title">Estrenos recientes</h2>
+        <div className="dashboard__grid-peliculas">
           {estrenos &&
-            estrenos.slice(0, 10).map((peli) => (
+            estrenos.slice(0, 12).map((peli) => (
               <CardPelicula key={peli.id} pelicula={peli} />
             ))}
         </div>
       </div>
 
-      <div className="contenedor-principal">
-        <div className="columna-izquierda">
+      {/* COLUMNAS */}
+      <div className="dashboard__columns">
+        {/* Izquierda */}
+        <div className="dashboard__col dashboard__col--left">
           <GenerosExplorar />
-          <div className="registro-llamada">
-            <p>¡Gestiona tu cuenta y datos desde el perfil!</p>
+          <div className="dashboard__registro-llamada">
+            <p className="dashboard__registro-text">¡Gestiona tu cuenta y datos desde el perfil!</p>
           </div>
         </div>
-
-        <div className="columna-derecha">
-          <div className="tendencia">
-            <h3>En tendencia</h3>
+        {/* Derecha */}
+        <div className="dashboard__col dashboard__col--right">
+          <div className="dashboard__box">
+            <h3 className="dashboard__box-title">En tendencia</h3>
             {proximamente && proximamente.length > 0 && (
-              <CardPelicula pelicula={proximamente[1]} />
+              <CardPelicula pelicula={proximamente[0]} />
             )}
           </div>
-
-          <div className="mejor-valorada">
-            <h3>Mejor Valorada</h3>
+          <div className="dashboard__box">
+            <h3 className="dashboard__box-title">Mejor Valorada</h3>
             {mejorValorada && mejorValorada.length > 0 && (
               <CardPelicula pelicula={mejorValorada[0]} />
             )}
           </div>
-
-          <div className="proximamente">
-            <h3>Próximamente</h3>
+          <div className="dashboard__box">
+            <h3 className="dashboard__box-title">Próximamente</h3>
             {proximamente && proximamente.length > 0 && (
-              <CardPelicula pelicula={proximamente[5]} />
+              <CardPelicula pelicula={proximamente[4]} />
             )}
           </div>
         </div>
@@ -83,3 +82,4 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
+

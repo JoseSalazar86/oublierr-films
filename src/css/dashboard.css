@@ -1,0 +1,110 @@
+/* DASHBOARD */
+
+.dashboard {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* Hero principal */
+.dashboard__hero {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.dashboard__hero-titulo {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.dashboard__hero-btn {
+  background-color: #1e1e1e;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.dashboard__hero-btn:hover {
+  background-color: #444;
+}
+
+/* Secciones tipo "Populares hoy", "Estrenos" */
+.dashboard__seccion {
+  margin-bottom: 3rem;
+}
+.dashboard__seccion-titulo {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  color: #222;
+}
+
+/* Grid de películas */
+.dashboard__grid-peliculas {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Columnas principal (Explorar + Cards especiales) */
+.dashboard__columns {
+  display: flex;
+  gap: 2.5rem;
+  margin-top: 2rem;
+  justify-content: space-between;
+}
+
+.dashboard__col {
+  flex: 1;
+  min-width: 250px;
+}
+
+.dashboard__col--right {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  justify-content: flex-end;
+  flex: 1;
+}
+
+/* Llamada a registro o mensaje (lado izquierdo) */
+.dashboard__registro-llamada {
+  margin-top: 2.5rem;
+  background: #f4f4f4;
+  border-radius: 8px;
+  padding: 1.1rem;
+  text-align: center;
+}
+.dashboard__registro-texto {
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+}
+
+/* Cards especiales (tendencia, mejor valorada, próximamente) */
+.dashboard__tendencia,
+.dashboard__mejor-valorada,
+.dashboard__proximamente {
+  margin-bottom: 1rem;
+  text-align: center;
+  /* SIN fondo ni padding, solo si quieres sombra al hover puedes poner box-shadow en la card */
+}
+
+.dashboard__box-titulo {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .dashboard__columns {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .dashboard__col--right {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}

@@ -1,0 +1,55 @@
+.notfound {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  background: var(--color-bg, #fff);
+}
+
+.notfound__box {
+  text-align: center;
+  padding: 2.5rem 2rem;
+  border-radius: 1.2rem;
+  background: var(--color-secondary-bg, #f4f4f4);
+  box-shadow: 0 4px 18px #b0bbea29;
+}
+
+.notfound__titulo {
+  color: var(--color-primary, #2563eb);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.notfound__texto {
+  color: var(--color-text, #222);
+  margin-bottom: 1.7rem;
+  font-size: 1.13rem;
+}
+
+.notfound__volver {
+  background: var(--color-primary, #2563eb);
+  color: #fff;
+  padding: 0.8rem 1.7rem;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.2s;
+  display: inline-block;
+}
+
+.notfound__volver:hover {
+  background: var(--color-accent, #4a90e2);
+}
+
+/* DARK MODE */
+.dark .notfound {
+  background: var(--color-bg-dark, #1e1e1e);
+}
+
+.dark .notfound__box {
+  background: var(--color-secondary-bg-dark, #23262f);
+}
+
+.dark .notfound__texto {
+  color: var(--color-text-dark, #fcfcfc);
+}

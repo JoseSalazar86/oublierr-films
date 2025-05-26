@@ -2,14 +2,15 @@ import React from 'react';
 import { Outlet } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import ButtonLogin from '../components/ButtonLogin';
+import UsuarioBarra from '../components/UsuarioBarra';
+
+
 
 function LayoutPublic() {
   return (
     <>
       <Header />
-      <ButtonLogin />
-     
+      <UsuarioBarra/>
       <main className="main">
         <Outlet />
       </main>

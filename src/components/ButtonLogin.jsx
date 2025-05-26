@@ -1,34 +1,46 @@
-import React from 'react'
+import React from 'react';
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import { signOut } from "firebase/auth";
-import { auth } from "../config/firebase"; 
+import { auth } from "../config/firebase";
+import "../css/loginRegister.css"
 
-
-
+/**
+ * Botón de autenticación BEM.
+ * - Si el usuario NO está logueado: muestra "Iniciar sesión"
+ * - Si el usuario está logueado: muestra "Cerrar sesión" y realiza signOut en Firebase
+ */
 function ButtonLogin() {
   const { user } = useAuth();
   const navigate = useNavigate();
 
-  const handleLogin = () => navigate("/login");  
-  
+  // Navega a la página de login
+  const handleLogin = () => navigate("/login");
+
+  // Cierra sesión y navega al home
   const handleLogout = async () => {
     await signOut(auth);
-    navigate("/"); // Redirige al Home tras cerrar sesión
+    navigate("/");
   };
 
   return (
     <div className="auth-buttons">
       {!user ? (
-        <>
-          <button onClick={handleLogin} className="auth-btn">Iniciar sesión</button>
-        </>
+        // Mostrar botón "Iniciar sesión" si NO hay usuario
+        <button onClick={handleLogin} className="auth-buttons__btn">
+          Iniciar sesión
+        </button>
       ) : (
-        <button onClick={handleLogout} className="auth-btn">Cerrar sesión</button>
+        // Mostrar botón "Cerrar sesión" si hay usuario
+        <button onClick={handleLogout} className="auth-buttons__btn">
+          Cerrar sesión
+        </button>
       )}
     </div>
   );
 }
 
 export default ButtonLogin;
+
+
 
