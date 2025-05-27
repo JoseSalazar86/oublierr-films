@@ -16,7 +16,7 @@ function Header() {
       {/* Logo y título */}
       <div className="header__left">
         <img
-          src="../public/logo-oublier_films.png"
+          src="/logo-oublier_films.png"
           alt="Oublier Films"
           className="header__logo"
         />
