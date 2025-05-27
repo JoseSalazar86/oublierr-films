@@ -153,11 +153,15 @@ src/
 
 ---
 
+## 🚀 Deploy
+
+La aplicación está desplegada en Netlify:  
+🔗 [https://oublierr-films.netlify.app](https://oublierr-films.netlify.app)
+
+---
 
 
 ## 👨‍💻 Autor
 
 **Jose Alfonso Salazar Ramos**  
 [Repositorio en GitHub](https://github.com/JoseSalazar86/oublierr-films)
-
----
