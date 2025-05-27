@@ -1,7 +1,7 @@
 import React from 'react';
 import { useAuth } from "../context/AuthContext";
 import { Link } from "react-router-dom";
-import "../css/notfound.css"; // Asegúrate de crear el archivo
+import "../css/notFound.css";
 
 function NotFound() {
   const { user } = useAuth();
